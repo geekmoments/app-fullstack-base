@@ -25,4 +25,7 @@ class Main{
 window.onload=function () {
     let miObjMain: Main= new Main();
     miObjMain.main();
+    let miObjMyFramework:MyFramework = new MyFramework();
+    let boton=miObjMyFramework.getElementById();
+    boton.textContent="NewButton";
 };

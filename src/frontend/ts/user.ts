@@ -23,7 +23,9 @@ class User{
     public setEmail(email:string){
         this.email=email;
     }
-
+    public setId(id:number){
+        this.id=id;
+    }
 
     public getIsLogged():boolean{
        return this.isLogged;
@@ -34,6 +36,9 @@ class User{
     }
     public getEmail():string{
         return this.email;
+    }
+    public getId():number{
+        return this.id;
     }
 
 }
