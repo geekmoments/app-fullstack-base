@@ -7,12 +7,17 @@ class Main{
         let usr1 = new  User(1,"cesar","cesar@gmail.com",true);
         let usr2 = new  User(2,"raul","raul@gmail.com",true);
         let usr3 = new  User(3,"alan","alan@gmail.com",false);
+
+        usr1.setIsLogged(false);
+        usr2.setEmail("George@gmail.com");
+
         listaUsr.push(usr1);
         listaUsr.push(usr2);
         listaUsr.push(usr3);
 
         for ( let obj in listaUsr) {
             listaUsr[obj].printInfo();
+            //console.log(obj);
         }
     }
 
