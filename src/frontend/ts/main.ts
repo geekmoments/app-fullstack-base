@@ -1,7 +1,10 @@
-class Main{
-
+class Main implements EventListenerObject{
+    public myFramework:MyFramework;
     public main(){
         console.log("se ejcuta el metodo main!");
+
+        this.myFramework = new MyFramework();
+
         let listaUsr:Array<User> = new Array<User>();
 
         let usr1 = new  User(1,"cesar","cesar@gmail.com",true);
@@ -21,11 +24,17 @@ class Main{
         }
     }
 
+    public handleEvent(evt: Event) {
+        alert("Evento2!");
+    }
+
 }
 window.onload=function () {
     let miObjMain: Main= new Main();
     miObjMain.main();
-    let miObjMyFramework:MyFramework = new MyFramework();
-    let boton=miObjMyFramework.getElementById();
+    let boton:HTMLElement=miObjMain.myFramework.getElementById();
     boton.textContent="NewButton";
+
+    boton.addEventListener('click', miObjMain);
+
 };
