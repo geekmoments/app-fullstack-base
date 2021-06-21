@@ -41,8 +41,15 @@ class Main implements EventListenerObject{ // importante agregar implement
                     if (xhr.status == 200) {
                         console.log("Llego la respuesta!!!!");
                         console.log(xhr.responseText);
+
+                        let listaDis:Array<Device> = JSON.parse(xhr.responseText);
+                        for (let disp of listaDis){
+                            console.log(disp.name + " - "+ disp.description);
+                        }
+
                         let parrafo = this.myFramework.getElementById("lista");
                         parrafo.innerHTML = xhr.responseText;
+                        //let electrodomesticos = JSON.parse(xhr.responseText);
                     } else {
                         alert("error!!");
                     }
