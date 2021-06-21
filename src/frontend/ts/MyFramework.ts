@@ -1,8 +1,8 @@
 class MyFramework {
 
-    public getElementById():HTMLElement{
+    public getElementById(id:string):HTMLElement{
 
-        return document.getElementById("boton");
+        return document.getElementById(id);
     }
 
 

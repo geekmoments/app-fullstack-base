@@ -26,7 +26,6 @@ class User{
     public setId(id:number){
         this.id=id;
     }
-
     public getIsLogged():boolean{
        return this.isLogged;
 

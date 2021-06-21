@@ -1,10 +1,12 @@
-class Main implements EventListenerObject{
+class Main implements EventListenerObject{ // importante agregar implement
     public myFramework:MyFramework;
     public main(){
         console.log("se ejcuta el metodo main!");
 
         this.myFramework = new MyFramework();
-
+       
+    }
+    public mostrarLista(){
         let listaUsr:Array<User> = new Array<User>();
 
         let usr1 = new  User(1,"cesar","cesar@gmail.com",true);
@@ -20,21 +22,26 @@ class Main implements EventListenerObject{
 
         for ( let obj in listaUsr) {
             listaUsr[obj].printInfo();
-            //console.log(obj);
-        }
-    }
+            }
 
+  
+
+    }
     public handleEvent(evt: Event) {
         alert("Evento2!");
+        this.mostrarLista();         
     }
 
 }
-window.onload=function () {
-    let miObjMain: Main= new Main();
+window.addEventListener("load", ()=> {
+    let miObjMain: Main = new Main();
     miObjMain.main();
-    let boton:HTMLElement=miObjMain.myFramework.getElementById();
-    boton.textContent="NewButton";
+    let boton:HTMLElement = miObjMain.myFramework.getElementById("boton");
+    boton.textContent = "Listar";
+    boton.addEventListener("click", miObjMain);
 
-    boton.addEventListener('click', miObjMain);
+    //let btnCerrar: HTMLElement = miObjMain.myFramework.getElementById("btnCerrar");
+    //btnCerrar.addEventListener("dblclick", miObjMain);
 
-};
+});
+
