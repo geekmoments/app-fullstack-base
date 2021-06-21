@@ -27,9 +27,16 @@ class Main implements EventListenerObject{ // importante agregar implement
   
 
     }
-    public handleEvent(evt: Event) {
+    public handleEvent(ev: Event) {
         alert("Evento2!");
-        this.mostrarLista();         
+        this.mostrarLista();
+        let objetoClick:HTMLElement = <HTMLInputElement>ev.target;
+        if (objetoClick.textContent=='Listar'){
+            objetoClick.textContent="Listando..."
+        }else {
+         alert('NO hay listas');
+        }
+
     }
 
 }
@@ -39,9 +46,8 @@ window.addEventListener("load", ()=> {
     let boton:HTMLElement = miObjMain.myFramework.getElementById("boton");
     boton.textContent = "Listar";
     boton.addEventListener("click", miObjMain);
-
-    //let btnCerrar: HTMLElement = miObjMain.myFramework.getElementById("btnCerrar");
-    //btnCerrar.addEventListener("dblclick", miObjMain);
+    let btnCerrar: HTMLElement = miObjMain.myFramework.getElementById("btnCerrar");
+    btnCerrar.addEventListener("dblclick", miObjMain);
 
 });
 
