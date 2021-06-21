@@ -9,7 +9,7 @@
     <body>
         <main>
             <!-- Navigation bar -->
-            <nav style="background-color:#124580">
+            <nav class="colorFondo">
                 <div class="nav-wrapper">
                     <a href="#!" class="brand-logo left" style="margin-left: 15px;">Smart Home</a>
                     <ul id="nav-mobile" class="right" style="margin-right: 15px;">
@@ -23,9 +23,61 @@
                 <h3>Smart Home Web Client!</h3>
                 <br/>
                 <div class="row">
-                     <a id="boton" class="waves-effect waves-light btn-small">CLICK</a>
-                     <a id="btnCerrar" class="waves-effect waves-light btn-small">CERRAR</a>
-                     <p id="lista">Sin datos</p>
+                     <a id="boton" class="waves-effect waves-light btn-small colorBoton">CLICK</a>
+                     <a id="btnCerrar" class="waves-effect waves-light btn-small colorBoton">CERRAR</a>
+                <div class="col l8 s12 m12">
+                    <p id="lista">Sin datos</p>
+
+                    <ul class="collection">
+                        <li class="collection-item avatar">
+                            <img src="./static/images/lampara.png" alt="imagen1" class="circle">
+                            <span class="disp"> Lampara 1</span>
+                            <p>Luz living
+                            </p>
+                            <!-- Switch Lampara -->
+                            <a href="#!" class="secondary-content">
+                                <div class="switch">
+                                    <label>
+                                        Off
+                                        <input type="checkbox">
+                                        <span class="lever"></span>
+                                        On
+                                    </label>
+                                </div>
+                            </a>
+
+                        </li>
+                        <li class="collection-item avatar">
+                            <img src="./static/images/ventilador.png" alt="imagen1" class="circle">
+                            <span class="disp"> Ventilador 1</span>
+                            <p>Luz living
+                            </p>
+                            <!-- Switch Ventilador -->
+                            <a href="#!" class="secondary-content">
+                                <div class="switch">
+                                    <label>
+                                        Off
+                                        <input type="checkbox">
+                                        <span class="lever"></span>
+                                        On
+                                    </label>
+                                </div>
+                            </a>
+
+                        </li>
+                            <li>
+
+                            </li>
+                            <li>
+
+                            </li>
+
+
+                    </ul>
+                </div>
+
+
+
                     <div class="input-field col s12 m12 l12 xl12">
                         <textarea id="textarea_1" class="materialize-textarea" style="height: 150px;" readonly></textarea>
                     </div>
@@ -36,7 +88,7 @@
             </div>
         </main>
 		<!-- Page Footer -->
-        <footer class="page-footer" style="background-color:#124580">
+        <footer class="page-footer colorFondo">
             <div class="container">
                 <div class="row">
                     <div class="col l6 s6">
