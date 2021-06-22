@@ -48,8 +48,7 @@ class Main implements EventListenerObject,HandlerPost{ // importante agregar imp
                            listaDisp.innerHTML+=`<li class="collection-item avatar">
                             <img src="./static/images/${imagen[0]}.png" alt="" class="circle">
                             <span class="nombreDisp">${disp.name}</span>
-                            <p>${disp.description}
-                            </p>
+                            <p>${disp.description}</p>
                             <a href="#!" class="secondary-content">
                                 <div class="switch">
                                     <label >
@@ -62,10 +61,6 @@ class Main implements EventListenerObject,HandlerPost{ // importante agregar imp
                             </a>
                           </li>`;
                         }
-
-                        //let parrafo = this.myFramework.getElementById("lista");
-                        //parrafo.innerHTML = xhr.responseText;
-                        //let electrodomesticos = JSON.parse(xhr.responseText);
                         for (let disp of listaDis){
                             let checkDisp = this.myFramework.getElementById("disp_"+disp.id);
                             checkDisp.addEventListener("click",this );
@@ -83,8 +78,7 @@ class Main implements EventListenerObject,HandlerPost{ // importante agregar imp
         } else {
             //alert(ev.target.id);
             let checkBox: HTMLInputElement = <HTMLInputElement>ev.target;
-            alert(checkBox.id + " - " + checkBox.checked);
-
+            //alert(checkBox.id + " - " + checkBox.checked);
             let datos = {"id":checkBox.id,"status":checkBox.checked}
             this.myFramework.requestPOST("http://localhost:8000/devices", this,datos);
                 }
@@ -92,7 +86,8 @@ class Main implements EventListenerObject,HandlerPost{ // importante agregar imp
 
         }
         responsePost(status:number,response:string){
-            alert(response);
+
+            alert(response+"aqui"+status);
         }
 
     }
@@ -104,8 +99,8 @@ window.addEventListener("load", ()=> {
     boton.textContent = "Listar";
     boton.addEventListener("click", miObjMain);
 
-    let btnCerrar: HTMLElement = miObjMain.myFramework.getElementById("btnCerrar");
-    btnCerrar.addEventListener("dblclick", miObjMain);
+    let btnAgregar: HTMLElement = miObjMain.myFramework.getElementById("btnAgregar");
+    btnAgregar.addEventListener("dblclick", miObjMain);
 
 });
 
