@@ -1,10 +1,9 @@
-class Main implements EventListenerObject{ // importante agregar implement
+class Main implements EventListenerObject,HandlerPost{ // importante agregar implement
     public myFramework:MyFramework;
-    public main(){
+    public main():void{
+
         console.log("se ejcuta el metodo main!");
-
         this.myFramework = new MyFramework();
-
     }
     public mostrarLista(){
         let listaUsr:Array<User> = new Array<User>();
@@ -29,7 +28,7 @@ class Main implements EventListenerObject{ // importante agregar implement
     }
     public handleEvent(ev: Event) {
         alert("Se hizo click!");
-        console.log(ev.target);
+        //console.log(ev.target);
 
         let objetoClick: HTMLElement = <HTMLElement>ev.target;
 
@@ -72,6 +71,8 @@ class Main implements EventListenerObject{ // importante agregar implement
                             checkDisp.addEventListener("click",this );
                         }
                     } else {
+
+
                         alert("error!!");
                     }
                 }
@@ -81,11 +82,17 @@ class Main implements EventListenerObject{ // importante agregar implement
             console.log("Ya hice el request!!");
         } else {
             //alert(ev.target.id);
-            let checkBox:HTMLInputElement=<HTMLElement>ev.target;
-            alert(checkBox.id + '-'+checkBox.checked)
+            let checkBox: HTMLInputElement = <HTMLInputElement>ev.target;
+            alert(checkBox.id + " - " + checkBox.checked);
+
+            let datos = {"id":checkBox.id,"status":checkBox.checked}
+            this.myFramework.requestPOST("http://localhost:8000/devices", this,datos);
                 }
 
 
+        }
+        responsePost(status:number,response:string){
+            alert(response);
         }
 
     }
