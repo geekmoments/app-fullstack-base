@@ -9,33 +9,35 @@
     <body>
         <main>
             <!-- Navigation bar -->
-            <nav class="colorFondo">
-                <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo left" style="margin-left: 15px;">Smart Home</a>
-                    <ul id="nav-mobile" class="right" style="margin-right: 15px;">
-                        <li><a href="#">Help</a></li>
+            <header>
+            <nav>
+                <div class="nav-wrapper colorFondo">
+                    <a href="#" class="brand-logo valign-wrapper"><img class="responsive-img logo" src="./static/images/gmlogo.png"></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Log in</a></li>
+                         <li><a href="collapsible.html">Help</a></li>
                     </ul>
                 </div>
-            </nav>	
+            </nav>
+            </header>
             <!-- Page Body -->
             <div class="container">
-                <br/>
-                <h3>Smart Home Web Client!</h3>
-                <br/>
+
                 <div class="row">
-                     <a id="boton" class="waves-effect waves-light btn-small colorBoton">CLICK</a>
-                     <a id="btnCerrar" class="waves-effect waves-light btn-small colorBoton">CERRAR</a>
+                    <div class="col s12"><br/>
+                        <h3 class="center-align">Smart Home Web Client!</h3>
+                        <br/></div>
+                    <div class="col s6">
+                        <a id="boton" class="waves-effect waves-light btn-small ">CLICK</a>
+                        <a id="btnCerrar" class="waves-effect waves-light btn-small colorBoton">CERRAR</a>
+                    </div>
+                 </div>
+                <div class="row">
                 <div class="col l8 s12 m12">
-                    <p id="lista">Sin datos</p>
-
                     <ul id="listaDisp" class="collection">
-
-
-
                     </ul>
                 </div>
-
-
 
                     <div class="input-field col s12 m12 l12 xl12">
                         <textarea id="textarea_1" class="materialize-textarea" style="height: 150px;" readonly></textarea>
@@ -51,8 +53,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col l6 s6">
-                        <h5 class="white-text">Smart Home</h5>
-                        <p class="grey-text text-lighten-4">Copyright ### - 2021</p>
+                        <h5 class="white-text">MIoT</h5>
+                        <p class="grey-text text-lighten-4">MIT License - 2021</p>
                     </div>
                     <div class="col l6 s6">
                         <h5 class="white-text right-align">Contact</h5>

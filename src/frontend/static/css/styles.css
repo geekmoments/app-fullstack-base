@@ -9,11 +9,15 @@ main {
     flex: 1 0 auto;
 }
 .colorFondo{
-    background-color:#FF5757;
+    background-color:#31373F;
 }
-.colorBoton{
-    background-color:#FF5757;
-}
+
 .disp{
     font-size:24px;
+}
+.logo{
+    width:90px;
+}
+header nav{
+    height:96px;
 }
