@@ -12,29 +12,10 @@ app.use(express.json());
 app.use(express.static('/home/node/app/static/'));
 app.set('json spaces',2);
 
-var datos = require('./datos.json');
 
-//=======[ Main module code ]==================================================
+//=======[ Routes ]==================================================
+app.use(require('./routes'));
 
-app.get('/devices', (req, res)=>{
-    res.json(datos);
-});
-app.get('/devices/:id', (req, res)=>{
-    //map,filter,reduce
-    let datosFiltrados=datos.filter(item => item.id ==req.params.id);
-    res.json(datosFiltrados[0].name);
-    console.log(datosFiltrados[0].name);
-});
-// recibe ID - state e impacta el cambio y devuelve
-app.post('/devices/', (req, res, next)=> {
-    let datosFiltrados=datos.filter(item => item.id ==req.body.id);
-
-    if (datosFiltrados.length>0){
-        datosFiltrados[0].state=req.body.state;
-    }
-
-    res.json(datosFiltrados);
-});
 app.listen(PORT, (req, res)=> {
     console.log("NodeJS API running correctly");
 });
