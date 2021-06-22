@@ -18,31 +18,20 @@ var datos = require('./datos.json');
 app.get('/devices', function(req, res){
     res.json(datos);
 });
-app.get('/devices', function(req, res){
-    res.json(datos);
+app.get('/devices/:id', function(req, res){
+    //map,filter,reduce
+    let datosFiltrados=datos.filter(item => item.id ==req.params.id);
+    res.json(datosFiltrados[0]);
 });
-
-// app.get('/devices/', function(req, res, next) {
-//     devices = [
-//         {
-//             'id': 1,
-//             'name': 'Lampara 1',
-//             'description': 'Luz living',
-//             'state': 0,
-//             'type': 1,
-//         },
-//         {
-//             'id': 2,
-//             'name': 'Ventilador 1',
-//             'description': 'Ventilador Habitacion',
-//             'state': 1,
-//             'type': 2,
-//         },
-//     ]
-//     res.send(JSON.stringify(devices)).status(200);
-// });
+// recibe ID - state e impacta el cambio y devuelve
 app.post('/devices/', function(req, res, next) {
-    res.send("cambio");
+    let datosFiltrados=datos.filter(item => item.id ==req.body.id);
+
+    if (datosFiltrados.length>0){
+        datosFiltrados[0].state=req.body.state;
+    }
+
+    res.json(datosFiltrados);
 });
 app.listen(PORT, function(req, res) {
     console.log("NodeJS API running correctly");
