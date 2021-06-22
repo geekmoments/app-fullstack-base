@@ -11,27 +11,36 @@ app.use(express.json());
 // to serve static files
 app.use(express.static('/home/node/app/static/'));
 
+var datos = require('./datos.json');
+
 //=======[ Main module code ]==================================================
 
-app.get('/devices/', function(req, res, next) {
-    devices = [
-        { 
-            'id': 1, 
-            'name': 'Lampara 1', 
-            'description': 'Luz living', 
-            'state': 0, 
-            'type': 1, 
-        },
-        { 
-            'id': 2, 
-            'name': 'Ventilador 1', 
-            'description': 'Ventilador Habitacion', 
-            'state': 1, 
-            'type': 2, 
-        },
-    ]
-    res.send(JSON.stringify(devices)).status(200);
+app.get('/devices', function(req, res){
+    res.json(datos);
 });
+app.get('/devices', function(req, res){
+    res.json(datos);
+});
+
+// app.get('/devices/', function(req, res, next) {
+//     devices = [
+//         {
+//             'id': 1,
+//             'name': 'Lampara 1',
+//             'description': 'Luz living',
+//             'state': 0,
+//             'type': 1,
+//         },
+//         {
+//             'id': 2,
+//             'name': 'Ventilador 1',
+//             'description': 'Ventilador Habitacion',
+//             'state': 1,
+//             'type': 2,
+//         },
+//     ]
+//     res.send(JSON.stringify(devices)).status(200);
+// });
 app.post('/devices/', function(req, res, next) {
     res.send("cambio");
 });

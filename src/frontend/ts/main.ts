@@ -44,9 +44,9 @@ class Main implements EventListenerObject,HandlerPost{ // importante agregar imp
                         let listaDis:Array<Device> = JSON.parse(xhr.responseText);
                         for (let disp of listaDis){
                             let listaDisp = this.myFramework.getElementById("listaDisp");
-
+                            let imagen= disp.name.split(' ');
                            listaDisp.innerHTML+=`<li class="collection-item avatar">
-                            <img src="./static/images/${disp.name}.png" alt="" class="circle">
+                            <img src="./static/images/${imagen[0]}.png" alt="" class="circle">
                             <span class="nombreDisp">${disp.name}</span>
                             <p>${disp.description}
                             </p>
