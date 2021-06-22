@@ -44,12 +44,33 @@ class Main implements EventListenerObject{ // importante agregar implement
 
                         let listaDis:Array<Device> = JSON.parse(xhr.responseText);
                         for (let disp of listaDis){
-                            console.log(disp.name + " - "+ disp.description);
+                            let listaDisp = this.myFramework.getElementById("listaDisp");
+
+                           listaDisp.innerHTML+=`<li class="collection-item avatar">
+                            <img src="./static/images/${disp.name}.png" alt="" class="circle">
+                            <span class="nombreDisp">${disp.name}</span>
+                            <p>${disp.description}
+                            </p>
+                            <a href="#!" class="secondary-content">
+                                <div class="switch">
+                                    <label >
+                                      Off
+                                      <input id="disp_${disp.id}" type="checkbox">
+                                      <span class="lever"></span>
+                                      On
+                                    </label>
+                                  </div>
+                            </a>
+                          </li>`;
                         }
 
-                        let parrafo = this.myFramework.getElementById("lista");
-                        parrafo.innerHTML = xhr.responseText;
+                        //let parrafo = this.myFramework.getElementById("lista");
+                        //parrafo.innerHTML = xhr.responseText;
                         //let electrodomesticos = JSON.parse(xhr.responseText);
+                        for (let disp of listaDis){
+                            let checkDisp = this.myFramework.getElementById("disp_"+disp.id);
+                            checkDisp.addEventListener("click",this );
+                        }
                     } else {
                         alert("error!!");
                     }
@@ -59,7 +80,9 @@ class Main implements EventListenerObject{ // importante agregar implement
             xhr.send();
             console.log("Ya hice el request!!");
         } else {
-            alert("No hay nada que mostrar");
+            //alert(ev.target.id);
+            let checkBox:HTMLInputElement=<HTMLElement>ev.target;
+            alert(checkBox.id + '-'+checkBox.checked)
                 }
 
 
