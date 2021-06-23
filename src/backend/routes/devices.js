@@ -21,4 +21,13 @@ router.post('/devices/', (req, res, next)=> {
 
     res.json(datosFiltrados);
 });
+router.post('/new',(req,res)=>{
+    var {id,name,description,state,type}= req.body;
+    if (id && name && description && state && type){
+        res.json('updated');
+    }else{
+        res.send('wrong request');
+
+    }
+});
 module.exports = router;
