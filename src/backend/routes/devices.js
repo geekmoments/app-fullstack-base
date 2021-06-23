@@ -22,9 +22,13 @@ router.post('/devices/', (req, res, next)=> {
     res.json(datosFiltrados);
 });
 router.post('/new',(req,res)=>{
-    var {id,name,description,state,type}= req.body;
-    if (id && name && description && state && type){
-        res.json('updated');
+    var {name,description,state,type}= req.body;
+    if (name && description && state && type){
+        var id = datos.length+1;
+        var newDevice={id,...req.body};
+        datos.push(newDevice);
+        res.json(datos);
+
     }else{
         res.send('wrong request');
 
