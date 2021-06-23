@@ -24,10 +24,12 @@ router.post('/devices/', (req, res, next)=> {
     res.json(datosFiltrados);
 });
 router.post('/new',(req,res)=>{
-    var {name,description,state,type}= req.body;
+    const id = datos.length+1;
+    const {name,description,state,type}= req.body;
+    const newDevice={id,...req.body};
+
     if (name && description && state && type){
-        var id = datos.length+1;
-        var newDevice={id,...req.body};
+
         datos.push(newDevice);
         res.json(datos);
 
@@ -41,6 +43,23 @@ router.delete('/delete/:id',(req, res,next) =>{
     datos.splice(datosFiltrados[0].id,1);
     res.json(datos);
     console.log(datosFiltrados[0].name);
+});
+//---ERROR--
+router.put('/update/:id',(req, res) =>{
+    let {id} = req.params;
+    const {name,description,state,type}=req.body;
+    if (name && description && state && type) {
+        let datosFiltrados=datos.filter(item => item.id ==req.params.id);
+        if(datosFiltrados){
+            datos.name = name;
+            datos.description = description;
+            datos.state = state;
+            datos.type = type;
+        }
+        res.json(datos);
+    }else{
+        res.status(500).json({error:'Error'})
+    }
 });
 
 module.exports = router;
