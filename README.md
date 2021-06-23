@@ -61,8 +61,7 @@ Se implementó los ejercicios propuestos siguendo el aprendizaje sugerido y se h
 Se Capturaron los valores y eventos por consola para verficicar funcionamiento
 ## Desarrollo backend 🛠️
 
-En esta sección podés ver las tecnologías más importantes utilizadas.
-
+ 
 Se dió un mayor orden al codigo separando la solicitud de dispositivos del archivo index principal, logrando tener un mayor orden, en adelante se obtará por este modo de trabajo, haciendo invocaciones desde index.js
 
 Se implementó metodos PUT PUSH DELETE y PUT, para actualizar los valores de json
@@ -71,9 +70,16 @@ Las pruebas de los métodos se realizaron con POSTMAN, con el que se pudo valida
 No se altera el cambio final del documento json para poder mantener el ejemlo.
 
 Se validaron los valores capturados para modificar valores json.
+
+###Pruebas con POSTMAN
+![architecture](doc/doc1.png)
+
+![architecture](doc/doc2.png)
 ## Pendientes
 No se pudo conectar el los métodos implementados con el frontend para poder agregar dispositivos por formularios.
+
 No se implementó tareas adicionales con Ajax.
+
 El boton Agregar no tiene funcionalidad.
 ## Licencia 📄
 
