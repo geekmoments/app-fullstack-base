@@ -72,9 +72,11 @@ No se altera el cambio final del documento json para poder mantener el ejemlo.
 Se validaron los valores capturados para modificar valores json.
 
 ###Pruebas con POSTMAN
+
 ![architecture](doc/doc1.png)
 
 ![architecture](doc/doc2.png)
+
 ## Pendientes
 No se pudo conectar el los métodos implementados con el frontend para poder agregar dispositivos por formularios.
 
