@@ -1,6 +1,8 @@
 const {Router} = require('express');
 const router = new Router();
 var datos = require('../datos.json');
+//require('underscore');
+
 
 router.get('/devices', (req, res)=>{
     res.json(datos);
@@ -14,7 +16,7 @@ router.get('/devices/:id', (req, res)=>{
 // recibe ID - state e impacta el cambio y devuelve
 router.post('/devices/', (req, res, next)=> {
     let datosFiltrados=datos.filter(item => item.id ==req.body.id);
-
+       // datos.splice(datosFiltrados[0].id,1);
     if (datosFiltrados.length>0){
         datosFiltrados[0].state=req.body.state;
     }
@@ -30,8 +32,15 @@ router.post('/new',(req,res)=>{
         res.json(datos);
 
     }else{
-        res.send('wrong request');
+        res.status(500).json({error:'wrong request'});
 
     }
 });
+router.delete('/delete/:id',(req, res,next) =>{
+    let datosFiltrados=datos.filter(item => item.id ==req.params.id);
+    datos.splice(datosFiltrados[0].id,1);
+    res.json(datos);
+    console.log(datosFiltrados[0].name);
+});
+
 module.exports = router;
