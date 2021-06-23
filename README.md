@@ -62,11 +62,27 @@ Se Capturaron los valores y eventos por consola para verficicar funcionamiento
 ## Desarrollo backend 🛠️
 
  
-Se dió un mayor orden al codigo separando la solicitud de dispositivos del archivo index principal, logrando tener un mayor orden, en adelante se obtará por este modo de trabajo, haciendo invocaciones desde index.js
+Se dió un mayor orden al codigo separando la solicitud de dispositivos del archivo index principal, logrando tener un mayor orden, en adelante se obtará por este modo de trabajo, haciendo invocaciones desde index.js , con la siguiente estructura de archivos
+```
+->backend
+    ->routes
+        devices.js
+    index.js
+    datos.json
+   ```
 
+ 
 Se implementó metodos PUT PUSH DELETE y PUT, para actualizar los valores de json
 Las pruebas de los métodos se realizaron con POSTMAN, con el que se pudo validar la funcionalidad y cambios.
+```
+router.get('/devices',
+router.get('/devices/:id'
+router.post('/devices/',
+router.post('/new',
+router.delete('/delete/:id',
+router.put('/update/:id'
 
+   ```
 No se altera el cambio final del documento json para poder mantener el ejemlo.
 
 Se validaron los valores capturados para modificar valores json.

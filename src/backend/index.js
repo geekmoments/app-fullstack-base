@@ -11,7 +11,6 @@ app.set('json spaces',2);
 app.use(express.json()); 
 // to serve static files
 app.use(express.static('/home/node/app/static/'));
-
 //=======[ Routes ]==================================================
 app.use(require('./routes/devices'));
 
