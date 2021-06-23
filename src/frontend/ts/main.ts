@@ -27,7 +27,7 @@ class Main implements EventListenerObject,HandlerPost{ // importante agregar imp
 
     }
     public handleEvent(ev: Event) {
-        alert("Se hizo click!");
+        //alert("Se hizo click!");
         //console.log(ev.target);
 
         let objetoClick: HTMLElement = <HTMLElement>ev.target;
@@ -78,6 +78,7 @@ class Main implements EventListenerObject,HandlerPost{ // importante agregar imp
         } else {
             //alert(ev.target.id);
             let checkBox: HTMLInputElement = <HTMLInputElement>ev.target;
+            console.log(checkBox.id + " - " + checkBox.checked);
             //alert(checkBox.id + " - " + checkBox.checked);
             let datos = {"id":checkBox.id,"status":checkBox.checked}
             this.myFramework.requestPOST("http://localhost:8000/devices", this,datos);
@@ -86,8 +87,8 @@ class Main implements EventListenerObject,HandlerPost{ // importante agregar imp
 
         }
         responsePost(status:number,response:string){
-
-            alert(response+"aqui"+status);
+            console.log(response+"switch"+status);
+            //alert(response+"switch"+status);
         }
 
     }
